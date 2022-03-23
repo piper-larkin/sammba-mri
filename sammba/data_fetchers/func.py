@@ -3,7 +3,7 @@ import numpy as np
 import warnings
 import json
 from ..orientation import _reset_affines
-from sklearn.datasets.base import Bunch
+from sklearn.datasets._base import Bunch
 from nilearn.datasets.utils import _fetch_files, _fetch_file, _get_dataset_dir
 from .utils import _get_dataset_descr
 
@@ -207,7 +207,7 @@ def fetch_zurich_anesthesiant(subjects=range(30), url=None,
 
     Returns
     -------
-    data : sklearn.datasets.base.Bunch
+    data : sklearn.datasets._base.Bunch
         Dictionary-like object, the interest attributes are:
         - 'func': string list. Paths to functional images.
         - 'anesthesiant': string list. Information on used anesthesiant.
