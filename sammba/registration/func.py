@@ -2,7 +2,7 @@ import warnings
 import os
 import numpy as np
 import nibabel
-from sklearn.datasets.base import Bunch
+from sklearn.datasets._base import Bunch
 from sklearn.utils import deprecated
 from nipype.caching import Memory
 from nipype.interfaces import afni, ants, fsl
@@ -12,7 +12,7 @@ from sammba import segmentation
 from ..orientation import fix_obliquity
 from .fmri_session import FMRISession
 from .struct import anats_to_template
-from .base import (_rigid_body_register, _warp, _per_slice_qwarp)
+from ._base import (_rigid_body_register, _warp, _per_slice_qwarp)
 
 
 def _realign(func_filename, write_dir, caching=False,
@@ -375,7 +375,7 @@ def coregister_fmri_session(session_data, t_r, write_dir, brain_volume,
     else:
         ComputeMask = segmentation.HistogramMask
 
-    if ants.base.Info().version is None:
+    if ants._base.Info().version is None:
         raise ValueError('Can not locate ANTS')
 
     if caching:
@@ -787,7 +787,7 @@ def coregister_fmri_session(session_data, t_r, write_dir, brain_volume,
 
 @deprecated("Function '_func_to_template' is deprecated and will be "
             "removed in future release. Use function '_apply_transforms'  "
-            "from 'sammba.registration.base' module")
+            "from 'sammba.registration._base' module")
 def _func_to_template(func_coreg_filename, template_filename, write_dir,
                       func_to_anat_oned_filename,
                       anat_to_template_oned_filename,
