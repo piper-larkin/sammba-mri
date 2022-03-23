@@ -2,7 +2,7 @@ import os
 from nipype.interfaces import afni, fsl
 from nipype.utils.filemanip import fname_presuffix
 from nipype.caching import Memory
-from sklearn.datasets.base import Bunch
+from sklearn.datasets._base import Bunch
 from sklearn.utils import deprecated
 from sammba import segmentation
 from ..orientation import fix_obliquity
