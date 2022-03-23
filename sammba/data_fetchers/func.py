@@ -33,7 +33,7 @@ def fetch_zurich_test_retest(subjects=range(15), sessions=[1], data_dir=None,
 
     Returns
     -------
-    data : sklearn.datasets.base.Bunch
+    data : sklearn.datasets._base.Bunch
         Dictionary-like object, the interest attributes are :
 
         - 'func': string list. Paths to functional images.
