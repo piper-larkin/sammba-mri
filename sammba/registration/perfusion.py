@@ -1,11 +1,11 @@
 import warnings
 import os
-from sklearn.datasets.base import Bunch
+from sklearn.datasets._base import Bunch
 from nipype.caching import Memory
 from nipype.interfaces import afni
 from nipype.utils.filemanip import fname_presuffix
 from nilearn._utils.exceptions import VisibleDeprecationWarning
-from .base import (_rigid_body_register, _warp, _per_slice_qwarp)
+from ._base import (_rigid_body_register, _warp, _per_slice_qwarp)
 
 
 def coregister(unifized_anat_file,
