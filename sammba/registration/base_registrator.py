@@ -4,7 +4,7 @@ from ..segmentation.brain_mask import (compute_histo_brain_mask,
                                        compute_morpho_brain_mask,
                                        _apply_mask)
 from ..preprocessing.bias_correction import afni_unifize
-from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn._base import BaseEstimator, TransformerMixin
 
 
 class BaseRegistrator(BaseEstimator, TransformerMixin):
